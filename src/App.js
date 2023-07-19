@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ClassCompo from "./HandsonFirst/ClassCompo";
+import FuncCompo from "./HandsonFirst/FuncCompo";
 
-function App() {
+
+function App (){
+  const [fState,setfState]=useState(false);
+  const [cState,setcState]=useState(false);
+  console.log(fState);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1 className="box">Styling using functional and  Class Component.</h1>
+    <button onClick={()=> setfState(!fState)}>To see styling in function Components</button>
+    <button onClick={()=>setcState(!cState)}>To see styling in Class Components</button>
+<div className="ClassFunc">
+    { fState ? <FuncCompo/> : " "}
+   {cState ? <ClassCompo/> : " "}
+   </div> 
+   </>
   );
-}
+  }
 
 export default App;
+
